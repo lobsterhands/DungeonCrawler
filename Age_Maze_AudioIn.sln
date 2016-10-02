@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{0ABBB0A8-07C1-D337-7A0B-A0D2861CF1BD}") = "Age_Maze_AudioIn", "Assembly-CSharp.csproj", "{DA632F8D-B6AC-BD12-5024-4648661C12DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA632F8D-B6AC-BD12-5024-4648661C12DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA632F8D-B6AC-BD12-5024-4648661C12DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA632F8D-B6AC-BD12-5024-4648661C12DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA632F8D-B6AC-BD12-5024-4648661C12DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
