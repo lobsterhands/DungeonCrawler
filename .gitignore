@@ -27,4 +27,4 @@
 *.lxo filter=lfs diff=lfs merge=lfs -text
 
 temp/
-library/
+Library/
