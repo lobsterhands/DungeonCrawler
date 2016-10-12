@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimSquare: 0
+  endOfHallCoords: []
   mazeSprites:
   - {fileID: 117968, guid: 9b0ffa7c56d3e5a4e93e835d0aa695ca, type: 2}
   - {fileID: 106396, guid: 9f9c0e8b855fb9140a33240533d9dbb2, type: 2}

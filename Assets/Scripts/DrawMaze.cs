@@ -19,6 +19,7 @@ public class DrawMaze : MonoBehaviour {
 
 	// 2-dimensional arrays to hold maze information
 	int[,] gameMaze; // Holds info returned by GenerateMaze();
+	public List<Vector2> endOfHallCoords = new List<Vector2>(); // Holds info for tiles that are loc'd at the end of a hallway
 	int[,] maze; // Used in generateMaze(); @LYLE: Can these be condensed?
 
 	public GameObject[] mazeSprites; // Create array to hold sprites
@@ -37,6 +38,7 @@ public class DrawMaze : MonoBehaviour {
 			for (int y = 0; y < dimSquare; ++y) {
 				if (gameMaze [x, y] == 0) { // If the object is a floor
 					drawTile (0, x, y); // Instantiate floor
+					checkForEndOfHallway(x, y);
 				} else { // The object is a wall
 					// Place wall corners
 					if (x == 0 && y == 0) { // Place bottom left corner
@@ -89,11 +91,6 @@ public class DrawMaze : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-	}
-
 	// getWallTile() accepts a gameMaze objects x and y values and returns
 	// an integer based on the binary sequence of it's Up Right Down Left neighbors;
 	// 0 represents a floor; 1, a wall. Example: 1100 means a tile has a wall to the Up and Right of it.
@@ -109,6 +106,20 @@ public class DrawMaze : MonoBehaviour {
 	void drawTile(int tileElement, int x, int y) {
 		child = Instantiate (mazeSprites [tileElement], new Vector2 (x, y), Quaternion.identity) as GameObject;
 		child.transform.parent = this.transform;
+	}
+
+	void checkForEndOfHallway(int x, int y) {
+
+		if (x == 0 && y == 0) {
+			return;
+		}
+
+		string binaryString = gameMaze [x, y + 1].ToString() + gameMaze[x + 1, y].ToString() + 
+			gameMaze[x, y - 1].ToString() + gameMaze[x - 1, y].ToString();
+		int elementNum = Convert.ToInt16 (binaryString, 2);
+		if (elementNum == 13 || elementNum == 14 || elementNum == 7 || elementNum == 11) {
+			endOfHallCoords.Add (new Vector2 (x, y));
+		}
 	}
 
 	public int[,] generateMaze() {

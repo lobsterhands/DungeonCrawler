@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
-	public float speed = 3f;
+	float speed = 5f;
 	int itemsCollected = 0;
 	float smooth = 0.05f; // Used for camera lerp
 
@@ -37,7 +37,7 @@ public class PlayerMove : MonoBehaviour {
 		winClip = winAudioSource.clip;
 
 		camera = GameObject.FindGameObjectWithTag ("MainCamera");
-		camera.transform.position = this.transform.position + new Vector3 (0f, 0f, -7.5f);
+		camera.transform.position = this.transform.position + new Vector3 (0f, 0f, -10f);
 		camera.transform.parent = this.transform;
 
 		animator = GetComponent<Animator> ();
@@ -79,11 +79,7 @@ public class PlayerMove : MonoBehaviour {
 		if (collider.tag == "Keys") {
 			speed = 4f;
 		}
-
-		Vector3 newCameraPos = camera.transform.position + new Vector3 (0, 0, -500f);
-
-		camera.transform.position = Vector3.Lerp (camera.transform.position, newCameraPos, Time.deltaTime * smooth);
-
+			
 		itemsCollected++;
 		if (itemsCollected < 5) {
 			itemCollectedAudioSource.PlayOneShot (itemCollectedClip);
