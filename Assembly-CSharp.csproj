@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\DrawMaze.cs" />
      <Compile Include="Assets\Scripts\GameSpace.cs" />
      <Compile Include="Assets\Scripts\LootTable.cs" />
+     <Compile Include="Assets\Scripts\Monster\GenerateMonsters.cs" />
+     <Compile Include="Assets\Scripts\Monster\MonsterController.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\SmallHealthPotion.cs" />
  <Reference Include="UnityEngine.UI">

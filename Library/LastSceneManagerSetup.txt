@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_Scenes/Chests_v0.0.1.unity
-  isLoaded: 1
-  isActive: 1
