@@ -110,7 +110,7 @@ public class DrawMaze : MonoBehaviour {
 
 	void checkForEndOfHallway(int x, int y) {
 
-		if (x == 0 && y == 0) {
+		if (x == 1 && y == 1) {
 			return;
 		}
 
