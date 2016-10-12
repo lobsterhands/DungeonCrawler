@@ -23,7 +23,8 @@ public class ChestScript : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D coll)
+	// TODO: Remove collisions on chest after opened
+	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		if (!chestOpened) {
 			Debug.Log ("chest opened");

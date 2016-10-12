@@ -30,9 +30,13 @@ public class GameSpace : MonoBehaviour {
 		Instantiate (collectibles [4], coffinPos, Quaternion.identity);
 
 		// Instantiate chests
-		for (int i = 0; i < numChests; i++) {
-			Vector2 chestPos = getChestPos ();
-			Instantiate (chest, chestPos, Quaternion.identity);
+		for (int i = 0; i < drawMazeScript.endOfHallCoords.Count; i++) {
+
+			int rand = UnityEngine.Random.Range (0, 3);
+
+			if (rand == 0) {
+				Instantiate (chest, drawMazeScript.endOfHallCoords [i], Quaternion.identity);
+			}
 		}
 
 	}
